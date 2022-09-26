@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - 13
+services:
+  - docker
+
+#using 'docker-compose' to build images
+script:
+  - docker-compose -f docker-compose-build.yaml build --parallel
+
+#Tagging
+  - docker tag udagram-api-feed nuel07/udagram-api-feed:latest
+  - docker tag udagram-api-user nuel07/udagram-api-user:latest
+  - docker tag udagram-frontend nuel07/udagram-frontend:latest
+  - docker tag udagram-reverserproxy nuel07/reverseproxy:latest
+
+#pushing to DockerHub
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password stdin
+  - docker-compose -f docker-compose-build.yaml push
+
+~
+  "travis.yml" 24L, 495C
