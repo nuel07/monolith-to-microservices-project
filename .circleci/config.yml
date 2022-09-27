@@ -29,6 +29,6 @@ jobs:
               docker tag udagram-api-feed nuel07/udagram-api-user:latest
               docker tag udagram-api-feed nuel07/udagram-frontend:latest
               docker tag udagram-api-feed nuel07/reverseproxy:latest
-              - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+              docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
               docker-compose -f docker-compose-build.yaml push
 
