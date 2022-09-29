@@ -30,9 +30,9 @@ jobs:
               docker tag udagram-frontend nuel07/udagram-frontend:latest
               docker tag reverseproxy nuel07/reverseproxy:latest
               docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-              docker push nuel07/udagram-api-feed:v1
-              docker push nuel07/udagram-api-user:v1
-              docker push nuel07/udagram-frontend:v1
-              docker push nuel07/reverseproxy:v1
+              docker push nuel07/udagram-api-feed:latest
+              docker push nuel07/udagram-api-user:latest
+              docker push nuel07/udagram-frontend:latest
+              docker push nuel07/reverseproxy:latest
               
 
