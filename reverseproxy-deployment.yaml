@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nuel-reverseproxy
+  labels:
+    app: nuel-reverseproxy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nuel-reverseproxy
+  template:
+    metadata:
+      labels:
+        app: nuel-reverseproxy
+    spec:
+      containers:
+       - name: reverseproxy
+         image: nuel07/reverseproxy:v2
+         imagePullPolicy: Always
+         resources:
+           requests:
+             memory: "64Mi"
+             cpu: "500m"
+           limits:
+             memory: "1024Mi"
+             cpu: "500m"
+         ports:
+         - containerPort: 8080
