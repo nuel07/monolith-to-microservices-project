@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nuel-user
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nuel-user
@@ -15,7 +15,7 @@ spec:
         app: nuel-user
     spec:
       containers:
-       - name: udagram-user
+       - name: udagram-api-user
          image: nuel07/udagram-api-user:v2
          imagePullPolicy: Always
          resources:
@@ -27,4 +27,3 @@ spec:
              cpu: "500m"
          ports:
          - containerPort: 8080
-

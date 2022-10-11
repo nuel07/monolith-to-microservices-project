@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nuel-reverseproxy
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nuel-reverseproxy
@@ -15,7 +15,7 @@ spec:
         app: nuel-reverseproxy
     spec:
       containers:
-       - name: reverseproxy
+       - name: udagram-reverseproxy
          image: nuel07/reverseproxy:v2
          imagePullPolicy: Always
          resources:

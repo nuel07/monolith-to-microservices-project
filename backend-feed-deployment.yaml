@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nuel-feed
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nuel-feed
@@ -15,7 +15,7 @@ spec:
         app: nuel-feed
     spec:
       containers:
-       - name: udagram-feed
+       - name: udagram-api-feed
          image: nuel07/udagram-api-feed:v2
          imagePullPolicy: Always
          resources:
