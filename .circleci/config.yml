@@ -25,12 +25,12 @@ jobs:
       - deploy:
           name: Push application Docker image
           command: |
-              docker tag udagram-api-feed nuel07/udagram-api-feed:v3a
-              docker tag udagram-api-user nuel07/udagram-api-user:v3a
-              docker tag udagram-frontend nuel07/udagram-frontend:v3a
-              docker tag reverseproxy nuel07/reverseproxy:v3a
+              docker tag udagram-api-feed nuel07/udagram-api-feed:v3b
+              docker tag udagram-api-user nuel07/udagram-api-user:v3b
+              docker tag udagram-frontend nuel07/udagram-frontend:v3b
+              docker tag reverseproxy nuel07/reverseproxy:v3b
               docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-              docker push nuel07/udagram-api-feed:v3a
-              docker push nuel07/udagram-api-user:v3a
-              docker push nuel07/udagram-frontend:v3a
-              docker push nuel07/reverseproxy:v3a
+              docker push nuel07/udagram-api-feed:v3b
+              docker push nuel07/udagram-api-user:v3b
+              docker push nuel07/udagram-frontend:v3b
+              docker push nuel07/reverseproxy:v3b

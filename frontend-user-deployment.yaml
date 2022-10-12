@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
        - name: udagram-frontend
-         image: nuel07/udagram-frontend:v2
+         image: nuel07/udagram-frontend:v3a
          imagePullPolicy: Always
          resources:
            requests:
